@@ -20,8 +20,8 @@
                           <br/>
                           <br/>
                           <div class="styled-select slate">
-                          <form>
-							<select>
+                          <form action="home" method="get">
+							<select name="country">
 								<option value="AL">Albania</option>
 								<option value="DZ">Algeria</option>
 								<option value="AS">American Samoa</option>

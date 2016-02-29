@@ -7,4 +7,6 @@ public class ApplicationConstants {
 	public static final String HOME_PAGE = "home";
 	public static final String EMPLOYEE_LISTING_PAGE = "employee-listing";
 	public static final String CONTACT_PAGE = "contact";
+
+	public static final String COUNTRY_COOKIE_NAME = "coun";
 }
