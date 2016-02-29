@@ -22,4 +22,14 @@ public class IndexController {
     public String home() {
         return ApplicationConstants.HOME_PAGE;
     }
+	
+	@RequestMapping(value = "/employee-listing", method = RequestMethod.GET)
+    public String employee() {
+        return ApplicationConstants.EMPLOYEE_LISTING_PAGE;
+    }
+	
+	@RequestMapping(value = "/contact", method = RequestMethod.GET)
+    public String contact() {
+        return ApplicationConstants.CONTACT_PAGE;
+    }
 }

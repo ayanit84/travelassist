@@ -23,30 +23,55 @@
        <div class="pages_maincontent">
               <h2 class="page_title">Services</h2> 
               <div class="page_content"> 
-              	<div class="cirmenu cirmenu1">
-              	 <img src="images/icons/white/team.png" alt="" title="" align="middle" />
-              	 <span>Directory</span>
-              	</div>
-              	<div class="cirmenu cirmenu2">
-              	<img src="images/icons/white/settings.png" alt="" title="" />
-              	<span>HelpDesk</span>
-              	</div>
-              	<div class="cirmenu cirmenu3">
-              	<img src="images/icons/white/contact.png" alt="" title="" />
-              	<span>Domestic</span>
-              	</div>
-              	<div class="cirmenu cirmenu4">
-              	 <img src="images/icons/white/team.png" alt="" title="" align="middle" />
-              	 <span>Directory</span>
-              	</div>
-              	<div class="cirmenu cirmenu5">
-              	<img src="images/icons/white/settings.png" alt="" title="" />
-              	<span>HelpDesk</span>
-              	</div>
-              	<div class="cirmenu cirmenu6">
-              	<img src="images/icons/white/contact.png" alt="" title="" />
-              	<span>Domestic</span>
-              	</div>
+                  <ul class="social_share">
+                  <li>
+                  <a href="employee-listing">
+                  	<img src="images/icons/black/directory.png" alt="" title="" />
+                  	<span><strong>Directory</strong></span>
+                  </a>
+                  </li>
+                  <li>
+                  <a href="#"><img src="images/icons/black/domestic.png" alt="" title="" />
+                  <span><strong>Domestic</strong></span>
+                  </a>
+                  </li>
+                  <li>
+                  <a href="#"><img src="images/icons/black/dos.png" alt="" title="" />
+                  <span><strong>Dos</strong></span>
+                  </a>
+                  </li>
+                  <li>
+                  <a href="#"><img src="images/icons/black/helpdesk.png" alt="" title="" />
+                  <span><strong>HelpDesk</strong></span>
+                  </a>
+                  </li>
+                  <li>
+                  <a href="#"><img src="images/icons/black/leaves.png" alt="" title="" />
+                  <span><strong>Leaves</strong></span>
+                  </a>
+                  </li>
+                  <li>
+                  <a href="#"><img src="images/icons/black/map.png" alt="" title="" />
+                  <span><strong>Map</strong></span>
+                  </a>
+                  </li>
+                  <li>
+                  <a href="#"><img src="images/icons/black/policy.png" alt="" title="" />
+                  <span><strong>Policy</strong></span>
+                  </a>
+                  </li>
+                  <li>
+                  <a href="#"><img src="images/icons/black/travel.png" alt="" title="" />
+                  <span><strong>Travel</strong></span>
+                  </a>
+                  </li>
+                  <li>
+                  <a href="#"><img src="images/icons/black/weather.png" alt="" title="" />
+                  <span><strong>Weather</strong></span>
+                  </a>
+                  </li>
+                  </ul>
+              
               </div>
        </div>
 

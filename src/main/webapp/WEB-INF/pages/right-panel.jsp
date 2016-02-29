@@ -16,7 +16,7 @@
                    <nav class="user-nav">
                         <ul>
                           <li>
-                          <a href="index.html"><img src="images/icons/white/settings.png" alt="" title="" /><span>Select Country</span></a>
+                          <a href="index"><img src="images/icons/white/settings.png" alt="" title="" /><span>Select Country</span></a>
                           <br/>
                           <br/>
                           <div class="styled-select slate">
@@ -94,7 +94,7 @@
 							  </form>
 							</div>
                           </li>
-                          <li><a href="help.html"><img src="images/icons/white/help.png" alt="" title="" /><span>Help!</span></a></li>
+                          <li><a href="help"><img src="images/icons/white/help.png" alt="" title="" /><span>Help!</span></a></li>
                         </ul>
                    </nav>
           </div>

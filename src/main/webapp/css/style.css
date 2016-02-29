@@ -545,9 +545,9 @@ float:left;
 padding:0 0 0 3%;
 }
 ul.features_list_detailed li .view_more{
-width:10%;
+width:7%;
 float:left;
-margin:25px 0 0 5%;
+margin:0 0 0 25% !important;
 }
 ul.features_list_detailed li .view_more img{
 display:block;
@@ -569,6 +569,7 @@ font-size:18px;
 padding:0 0 5px 0;
 margin:0px;
 }
+
 /* 6-3. SOCIAL ICONS */
 ul.social_share{
 list-style:none;
@@ -1138,3 +1139,4 @@ and (orientation : landscape) {
 .logo{
 margin:5% 0 0 0;
 }
+

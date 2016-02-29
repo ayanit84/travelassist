@@ -1,8 +1,7 @@
 /*==============================================
 [Blue color stylesheet blue.css]
 
-Author:	SINDEVO.COM - Smart Internet Development
-Template:	Biotic - Mobile Web APP Template
+Author:	Infosys.com
 ================================================*/
 
 /*===============================================*/
@@ -145,33 +144,16 @@ background-color:#41b1b8;
 .user-nav ul li{
 border-bottom:1px #2a979e solid;
 }
-
-.cirmenu{
-	width:100px;
-	height:100px;
-	float:left;
-	text-align:center;
-	background:#ccc;
-	margin-right:11%;
-	margin-bottom:11%;
-	border-radius:50%;
+.emp-details{
+	clear:both;margin:0 0 0 3.1%;
 }
-
-.cirmenu1{
-	background: #4990ce;
+.strong-cls{
+	color:#2f949a;
+	font-weight:bold;
 }
-.cirmenu2{
-	background: #CE8449;
+.emp-details-table{
+	width:70%;
 }
-.cirmenu3{
-	background: #CE4990;
-}
-.cirmenu4{
-	background: #49CE84;
-}
-.cirmenu5{
-	background: #49cec8;
-}
-.cirmenu6{
-	background: #ce494e;
+.emp-details-table td{
+	font-weight:normal;
 }
