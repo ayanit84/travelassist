@@ -25,7 +25,7 @@
               <div class="page_content"> 
                   <ul class="social_share">
                   <li>
-                  <a href="employee-listing">
+                  <a href="list">
                   	<img src="images/icons/black/directory.png" alt="" title="" />
                   	<span><strong>Directory</strong></span>
                   </a>

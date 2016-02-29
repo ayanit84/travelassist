@@ -21,7 +21,7 @@
     <div role="main" class="ui-content">
     
        <div class="pages_maincontent">
-              <h2 class="page_title">Employees</h2> 
+              <h2 class="page_title">Infocions</h2> 
               <div class="page_content"> 
               	 <ul class="features_list_detailed">
 		          <li>

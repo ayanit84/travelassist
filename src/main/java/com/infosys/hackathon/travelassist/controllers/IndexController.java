@@ -15,7 +15,7 @@ import com.infosys.hackathon.travelassist.utils.TravelCookieHelper;
 public class IndexController {
 
 	private static final Logger LOGGER = Logger
-			.getLogger(IndexController.class);
+		.getLogger(IndexController.class);
 
 	@RequestMapping(value = "/help", method = RequestMethod.GET)
 	public String help() {
@@ -24,16 +24,11 @@ public class IndexController {
 
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String home(@RequestParam String country,
-			HttpServletResponse response) {
+		HttpServletResponse response) {
 		LOGGER.info("selected country " + country);
-		response.addCookie(TravelCookieHelper.create(
-				ApplicationConstants.COUNTRY_COOKIE_NAME, country));
+		response.addCookie(TravelCookieHelper
+			.create(ApplicationConstants.COUNTRY_COOKIE_NAME, country));
 		return ApplicationConstants.HOME_PAGE;
-	}
-
-	@RequestMapping(value = "/employee-listing", method = RequestMethod.GET)
-	public String employee() {
-		return ApplicationConstants.EMPLOYEE_LISTING_PAGE;
 	}
 
 	@RequestMapping(value = "/contact", method = RequestMethod.GET)
