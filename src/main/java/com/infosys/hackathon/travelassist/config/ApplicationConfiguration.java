@@ -12,10 +12,13 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver;
 import org.springframework.web.servlet.view.JstlView;
 
 import com.infosys.hackathon.travelassist.utils.ApplicationConstants;
+import com.infosys.hackathon.travelassist.utils.ServiceEndpoint;
 
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = { "com.infosys.hackathon.travelassist.controllers" })
+@ComponentScan(basePackages = {
+		"com.infosys.hackathon.travelassist.controllers",
+		"com.infosys.hackathon.travelassist.services" })
 public class ApplicationConfiguration extends WebMvcConfigurerAdapter {
 
 	@Bean
@@ -35,8 +38,8 @@ public class ApplicationConfiguration extends WebMvcConfigurerAdapter {
 
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
-		registry.addViewController("/").setViewName(
-				ApplicationConstants.INDEX_PAGE);
+		registry.addViewController("/")
+			.setViewName(ApplicationConstants.INDEX_PAGE);
 	}
 
 	@Bean
