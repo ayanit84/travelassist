@@ -2,6 +2,7 @@ package com.infosys.hackathon.travelassist.controllers;
 
 import org.apache.log4j.Logger;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.CookieValue;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -12,7 +13,7 @@ import com.infosys.hackathon.travelassist.utils.ApplicationConstants;
 public class DirectoryServiceController {
 
 	private static final Logger LOGGER = Logger
-		.getLogger(DirectoryServiceController.class);
+			.getLogger(DirectoryServiceController.class);
 
 	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public String listEmployees() {
@@ -21,10 +22,10 @@ public class DirectoryServiceController {
 	}
 
 	@RequestMapping(value = "/list", method = RequestMethod.POST)
-	public String listEmployeesResult(@RequestParam String state,
-		@RequestParam String city) {
-		LOGGER
-			.info("search for employees at state:" + state + ", city=" + city);
+	public String listEmployeesResult(@CookieValue("coun") String country,
+			@RequestParam String state, @RequestParam String city) {
+		LOGGER.info("search for employees, country:" + country + "state:"
+				+ state + ", city=" + city);
 		return ApplicationConstants.EMPLOYEE_LISTING_PAGE;
 	}
 }

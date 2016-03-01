@@ -37,6 +37,10 @@ public class ApplicationConfiguration extends WebMvcConfigurerAdapter {
 	public void addViewControllers(ViewControllerRegistry registry) {
 		registry.addViewController("/").setViewName(
 				ApplicationConstants.INDEX_PAGE);
-		;
+	}
+
+	@Bean
+	public ServiceEndpoint serviceEndpoint() {
+		return new ServiceEndpoint();
 	}
 }
