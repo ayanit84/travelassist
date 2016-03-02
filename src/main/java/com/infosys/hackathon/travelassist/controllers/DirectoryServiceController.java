@@ -9,8 +9,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.infosys.hackathon.services.ResultCodes;
 import com.infosys.hackathon.services.directory.dto.SearchRequest;
 import com.infosys.hackathon.services.directory.dto.SearchResponse;
+import com.infosys.hackathon.services.exceptions.TravelServiceException;
 import com.infosys.hackathon.travelassist.services.DirectoryServiceClient;
 import com.infosys.hackathon.travelassist.utils.ApplicationConstants;
 
@@ -20,7 +22,7 @@ public class DirectoryServiceController {
 	private static final String EMPLOYEES_KEY = "employees";
 
 	private static final Logger LOGGER = Logger
-		.getLogger(DirectoryServiceController.class);
+			.getLogger(DirectoryServiceController.class);
 
 	@Autowired
 	private DirectoryServiceClient directoryServiceClient;
@@ -32,17 +34,25 @@ public class DirectoryServiceController {
 	}
 
 	@RequestMapping(value = "/list", method = RequestMethod.POST)
-	public String listEmployeesResult(@CookieValue("coun") String country,
-		@RequestParam String state, @RequestParam String city, ModelMap model) {
-		LOGGER.info("search for employees, country:" + country + "state:"
-			+ state + ", city=" + city);
-		SearchResponse searchResponse = directoryServiceClient.postRequest(
-			new SearchRequest(country, state, city), SearchResponse.class);
-		LOGGER.info("successfully processed, result = "
-			+ searchResponse.getResult() + ", "
-			+ searchResponse.getEmployees().size() + " employees returned");
+	public String listEmployeeResult(@CookieValue("coun") String country,
+			@RequestParam String state, @RequestParam String city,
+			ModelMap model) {
+		LOGGER.info("search for employees, country:" + country + " ,state:"
+				+ state + ", city=" + city);
+		SearchResponse searchResponse = new SearchResponse();
+		try {
+			searchResponse = directoryServiceClient.postRequest(
+					new SearchRequest(country, state, city),
+					SearchResponse.class);
+			LOGGER.info("successfully processed, result = "
+					+ searchResponse.getResult() + ", "
+					+ searchResponse.getEmployees().size()
+					+ " employees returned");
 
-		model.addAttribute(EMPLOYEES_KEY, searchResponse.getEmployees());
+			model.addAttribute(EMPLOYEES_KEY, searchResponse.getEmployees());
+		} catch (TravelServiceException e) {
+			searchResponse.setResult(ResultCodes.Failure);
+		}
 		return ApplicationConstants.EMPLOYEE_LISTING_PAGE;
 	}
 }

@@ -8,6 +8,8 @@ import java.util.Map;
 import java.util.Properties;
 import java.util.StringTokenizer;
 
+import com.infosys.hackathon.travelassist.exceptions.ServiceEndPointNotFoundException;
+
 public class ServiceEndpoint {
 
 	private static final String DOT = ".";
@@ -22,8 +24,8 @@ public class ServiceEndpoint {
 	public ServiceEndpoint() {
 		try {
 			this.properties = new Properties();
-			properties.load(getClass().getClassLoader()
-				.getResourceAsStream("main.properties"));
+			properties.load(getClass().getClassLoader().getResourceAsStream(
+					"main.properties"));
 			process();
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -32,34 +34,39 @@ public class ServiceEndpoint {
 
 	}
 
-	public String getEndPoint(String serviceName, String handler) {
+	public String getEndPoint(String serviceName, String handler)
+			throws ServiceEndPointNotFoundException {
 		ServiceDetails details = getServiceDetail(serviceName);
+		if (!details.getUrlHandlerMapping().containsKey(handler)) {
+			throw new ServiceEndPointNotFoundException(handler
+					+ " handler not found under service " + serviceName);
+		}
 		return getBaseUrl() + details.getUrl()
-			+ details.getUrlHandlerMapping().get(handler);
+				+ details.getUrlHandlerMapping().get(handler);
 	}
 
 	private void process() {
 		StringTokenizer tokenizer = new StringTokenizer(
-			this.properties.getProperty(SERVICENAMES), DELIMITER);
+				this.properties.getProperty(SERVICENAMES), DELIMITER);
 		this.serviceDetails = new ArrayList<ServiceEndpoint.ServiceDetails>();
 		while (tokenizer.hasMoreTokens()) {
 			ServiceDetails details = new ServiceDetails();
 			String serviceName = tokenizer.nextToken();
 
 			details.setName(serviceName);
-			details.setUrl(
-				this.properties.getProperty(serviceName + DOT + URL_SUFFIX));
+			details.setUrl(this.properties.getProperty(serviceName + DOT
+					+ URL_SUFFIX));
 
 			StringTokenizer handlerTokenizer = new StringTokenizer(
-				this.properties.getProperty(
-					serviceName + DOT + HANDLERS_SUFFIX),
-				DELIMITER);
+					this.properties.getProperty(serviceName + DOT
+							+ HANDLERS_SUFFIX), DELIMITER);
 			while (handlerTokenizer.hasMoreTokens()) {
 				String handler = handlerTokenizer.nextToken();
 
-				details.getUrlHandlerMapping().put(handler,
-					this.properties.getProperty(
-						serviceName + DOT + handler + DOT + URL_SUFFIX));
+				details.getUrlHandlerMapping().put(
+						handler,
+						this.properties.getProperty(serviceName + DOT + handler
+								+ DOT + URL_SUFFIX));
 			}
 
 			this.serviceDetails.add(details);
@@ -70,14 +77,14 @@ public class ServiceEndpoint {
 		return this.properties.getProperty(BASE_PREFIX + DOT + URL_SUFFIX);
 	}
 
-	private ServiceDetails getServiceDetail(String serviceName) {
+	private ServiceDetails getServiceDetail(String serviceName)
+			throws ServiceEndPointNotFoundException {
 		for (ServiceDetails eachServie : this.serviceDetails) {
 			if (eachServie.getName().equals(serviceName)) {
 				return eachServie;
 			}
 		}
-		// TODO exception
-		return null;
+		throw new ServiceEndPointNotFoundException(serviceName + " not found");
 	}
 
 	class ServiceDetails {
@@ -109,8 +116,7 @@ public class ServiceEndpoint {
 			return urlHandlerMapping;
 		}
 
-		public void setUrlHandlerMapping(
-			Map<String, String> urlHandlerMapping) {
+		public void setUrlHandlerMapping(Map<String, String> urlHandlerMapping) {
 			this.urlHandlerMapping = urlHandlerMapping;
 		}
 
