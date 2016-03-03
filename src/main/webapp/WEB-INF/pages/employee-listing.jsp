@@ -32,39 +32,20 @@
 		<!-- /header -->
 
 		<form action="list" method="POST" name="employees">
+			<span>State</span> 
+				<select name="state" id="state">
+					<c:forEach var="state" items="${states}">
+						<option value="${state.key}">${state.value}</option>
+					</c:forEach>
+				</select>
+				<span>City</span> <select name="city" id="city">
+					<c:forEach var="city" items="${cities}">
+						<option value="${city.key}">${city.value}</option>
+					</c:forEach>
+				</select> 
+				<input type="submit" value="Search" />
 			<div role="main" class="ui-content">
-				<ul>
-					<li><span>State</span>
-						<div class="styled-select slate">
-
-							<select name="state">
-							</select>
-
-							<%-- <form action="home" method="get">
-					<select name="country">
-						<c:forEach var="state" items="${states}">
-							<option value="${state.key}">${state.value}</option>
-						</c:forEach>
-					</select>
-				</form> --%>
-						</div></li>
-					<li><span>City</span>
-						<div class="styled-select slate">
-							<select name="city">
-								<c:forEach var="city" items="${cities}">
-									<option value="${city.key}">${city.value}</option>
-								</c:forEach>
-							</select>
-							<%-- <form action="home" method="get">
-					<select name="country">
-						<c:forEach var="state" items="${states}">
-							<option value="${state.key}">${state.value}</option>
-						</c:forEach>
-					</select>
-				</form> --%>
-						</div></li>
-						<li><input type="submit" value="Search" /></li>
-				</ul>
+				
 
 				<div class="pages_maincontent">
 					<h2 class="page_title">Infocions</h2>
@@ -158,11 +139,32 @@
 		<!-- /page -->
 	</div>
 	<jsp:include page="/WEB-INF/pages/js-include.jsp"></jsp:include>
+
+
 	<script>
 		$('.view_more').click(function() {
 			$(this).next('.emp-details').slideToggle("slow");
 		});
 	</script>
+	<script type="text/javascript">
+	$(document).ready(function() { 
+		$('#state').change(
+			function() {
+				$.getJSON('http://localhost:8080/servicemanager/service/country/cities/us/' + $(this).val(), function(data) 
+				{
+					$('#city').html('');
+					var html = '';
+					var len = data.length;
+					for ( var i = 0; i < len; i++) {
+						html += '<option value="' + data[i].key + '">'
+								+ data[i].value + '</option>';
+					}
+	 
+					$('#city').html(html);
+				});
+			});
+	});
+</script>
 </body>
 </html>
 
