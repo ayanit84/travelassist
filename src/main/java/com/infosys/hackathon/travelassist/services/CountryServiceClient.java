@@ -37,9 +37,16 @@ public class CountryServiceClient extends
 			Class<CountryServiceResponse> responseType, String... urlParams)
 			throws TravelServiceException {
 		try {
-			return getRestTemplate().getForObject(
+			StringBuilder serviceUrl = new StringBuilder(
 					serviceEndPoint.getEndPoint(COUNTRY_SERVICE_NAME,
-							handlerName), responseType);
+							handlerName));
+			if (urlParams != null && urlParams.length > 0) {
+				for (int i = 0; i < urlParams.length; i++) {
+					serviceUrl.append("/" + urlParams[i]);
+				}
+			}
+			return getRestTemplate().getForObject(serviceUrl.toString(),
+					responseType);
 		} catch (RestClientException | ServiceEndPointNotFoundException e) {
 			throw new RestClientException(e.getMessage());
 		}
