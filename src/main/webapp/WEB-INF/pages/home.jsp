@@ -41,8 +41,8 @@
                   </a>
                   </li>
                   <li>
-                  <a href="#"><img src="images/icons/black/helpdesk.png" alt="" title="" />
-                  <span><strong>HelpDesk</strong></span>
+                  <a href="emergency-contact"><img src="images/icons/black/helpdesk.png" alt="" title="" />
+                  <span><strong>Emergency Contacts</strong></span>
                   </a>
                   </li>
                   <li>

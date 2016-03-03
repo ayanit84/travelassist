@@ -57,8 +57,8 @@ public class IndexController {
 		return ApplicationConstants.HOME_PAGE;
 	}
 
-	@RequestMapping(value = "/contact", method = RequestMethod.GET)
-	public String contact() {
+	@RequestMapping(value = "/contactus", method = RequestMethod.GET)
+	public String contactUs() {
 		return ApplicationConstants.CONTACT_PAGE;
 	}
 }

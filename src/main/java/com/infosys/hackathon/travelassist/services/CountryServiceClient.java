@@ -26,8 +26,15 @@ public class CountryServiceClient extends
 	}
 
 	@Override
+	public CountryServiceResponse postRequest(String handlerName,
+			ServiceRequest request, Class<CountryServiceResponse> responseType)
+			throws TravelServiceException {
+		throw new TravelServiceException("Not Implemented");
+	}
+
+	@Override
 	public CountryServiceResponse getRequest(String handlerName,
-			Class<CountryServiceResponse> responseType)
+			Class<CountryServiceResponse> responseType, String... urlParams)
 			throws TravelServiceException {
 		try {
 			return getRestTemplate().getForObject(
@@ -36,13 +43,6 @@ public class CountryServiceClient extends
 		} catch (RestClientException | ServiceEndPointNotFoundException e) {
 			throw new RestClientException(e.getMessage());
 		}
-	}
-
-	@Override
-	public CountryServiceResponse postRequest(String handlerName,
-			ServiceRequest request, Class<CountryServiceResponse> responseType)
-			throws TravelServiceException {
-		throw new TravelServiceException("Not Implemented");
 	}
 
 }

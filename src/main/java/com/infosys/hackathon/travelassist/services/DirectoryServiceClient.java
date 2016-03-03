@@ -25,13 +25,7 @@ public class DirectoryServiceClient extends
 		return DIRECTORY_SERVICE_NAME;
 	}
 
-	@Override
-	public SearchResponse getRequest(String handlerName,
-			Class<SearchResponse> responseType) throws TravelServiceException {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
+	
 	@Override
 	public SearchResponse postRequest(String handlerName,
 			SearchRequest request, Class<SearchResponse> responseType)
@@ -43,6 +37,14 @@ public class DirectoryServiceClient extends
 		} catch (RestClientException | ServiceEndPointNotFoundException e) {
 			throw new RestClientException(e.getMessage());
 		}
+	}
+
+	@Override
+	public SearchResponse getRequest(String handlerName,
+			Class<SearchResponse> responseType, String... urlParams)
+			throws TravelServiceException {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }
