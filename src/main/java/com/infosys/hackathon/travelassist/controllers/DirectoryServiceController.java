@@ -20,6 +20,7 @@ import com.infosys.hackathon.travelassist.utils.ApplicationConstants;
 public class DirectoryServiceController {
 
 	private static final String EMPLOYEES_KEY = "employees";
+	private static final String DIRECTORY_SEARCH_HANDLER = "search";
 
 	private static final Logger LOGGER = Logger
 			.getLogger(DirectoryServiceController.class);
@@ -42,8 +43,8 @@ public class DirectoryServiceController {
 		SearchResponse searchResponse = new SearchResponse();
 		try {
 			searchResponse = directoryServiceClient.postRequest(
-					new SearchRequest(country, state, city),
-					SearchResponse.class);
+					DIRECTORY_SEARCH_HANDLER, new SearchRequest(country, state,
+							city), SearchResponse.class);
 			LOGGER.info("successfully processed, result = "
 					+ searchResponse.getResult() + ", "
 					+ searchResponse.getEmployees().size()

@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!--  right panel -->
           <div class="user_login_info">
           
@@ -21,7 +22,12 @@
                           <br/>
                           <div class="styled-select slate">
                           <form action="home" method="get">
-							<select name="country">
+                          	<select name="country">
+	                          	<c:forEach var="country" items="${countries}">
+	                          		<option value="${country.key}">${country.value}</option>
+	                          	</c:forEach>
+                          	</select>
+							<!-- <select name="country">
 								<option value="AL">Albania</option>
 								<option value="DZ">Algeria</option>
 								<option value="AS">American Samoa</option>
@@ -89,7 +95,7 @@
 								<option value="YE">Yemen</option>
 								<option value="ZM">Zambia</option>
 								<option value="ZW">Zimbabwe</option>
-							  </select>
+							  </select> -->
 							  <input type="submit" value="Launch your help portal!" />
 							  </form>
 							</div>
