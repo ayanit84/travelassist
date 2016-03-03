@@ -13,25 +13,6 @@
 		document.getElementById["employees"].submit();
 	}
 </script>
-<c:url var="findStatesURL" value="/service/country/states" />
-<script type="text/javascript">
-	$(document).ready(
-			function() {
-				$.getJSON('${findStatesURL}', {
-					ajax : 'true'
-				}, function(data) {
-					var html = '<option value="">State</option>';
-					var len = data.length;
-					for ( var i = 0; i < len; i++) {
-						html += '<option value="' + data[i].name + '">'
-								+ data[i].name + '</option>';
-					}
-					html += '</option>';
-
-					$('#state').html(html);
-				});
-			});
-</script>
 </head>
 <body>
 
