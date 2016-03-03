@@ -32,6 +32,7 @@
 		          <div class="emp-details" style="display:none;">
 		          	<span class="strong-cls">Contact Information:</span>
 		          	<table class="emp-details-table">
+		          	<tr><td>Name:</td><td>basca</td></tr>
 		          	<tr><td>Conatct No.:</td><td>9435789088</td></tr>
 		          	<tr><td>Eamil Id:</td><td>saikamini.9@gmail.com</td></tr>
 		          	</table>
@@ -39,7 +40,7 @@
 		          	<span class="strong-cls">Office Information:</span>
 		          	<table class="emp-details-table">
 		          	<tr><td>Unit:</td><td>MFGADM</td></tr>
-		          	<tr><td>Designation:</td><td>Senior System Engineer</td></tr>
+		          	<tr><td>Designation:</td><td>BP HR</td></tr>
 		          	</table>
 		          </div>
 		          </li> 
@@ -51,6 +52,7 @@
 		          <div class="emp-details" style="display:none;">
 		          	<span class="strong-cls">Contact Information:</span>
 		          	<table class="emp-details-table">
+		          	<tr><td>Name:</td><td>basca</td></tr>
 		          	<tr><td>Conatct No.:</td><td>9435789088</td></tr>
 		          	<tr><td>Eamil Id:</td><td>saikamini.9@gmail.com</td></tr>
 		          	</table>
@@ -58,7 +60,52 @@
 		          	<span class="strong-cls">Office Information:</span>
 		          	<table class="emp-details-table">
 		          	<tr><td>Unit:</td><td>MFGADM</td></tr>
-		          	<tr><td>Designation:</td><td>Senior System Engineer</td></tr>
+		          	<tr><td>Designation:</td><td>Head of Country</td></tr>
+		          	</table>
+		          </div>
+		          </li>
+		          
+		          <li>
+		          <div class="feat_small_details">
+		          <h4>Service Desk:</h4>
+		          </div>
+		          <div class="view_more"><a href="#" data-transition="slidefade"><img src="images/load_posts_disabled.png" alt="" title="" /></a></div>
+		          <div class="emp-details" style="display:none;">
+		          	<table class="emp-details-table">
+		          	<tr><td>CCD Global support (Old Series)​:</td><td>basca</td></tr>
+		          	<tr><td>Reachable through​:</td><td>nbvbn</td></tr>
+		          	<tr><td>CCD Global support (3355INFY Series )​:</td><td>bvcbvxbvc</td></tr>
+		          	<tr><td>Reachable through​:</td><td>nbvbn</td></tr>
+		          	</table>
+		          </div>
+		          </li>
+		          
+		          <li>
+		          <div class="feat_small_details">
+		          <h4>Emergency Contacts:</h4>
+		          </div>
+		          <div class="view_more"><a href="#" data-transition="slidefade"><img src="images/load_posts_disabled.png" alt="" title="" /></a></div>
+		          <div class="emp-details" style="display:none;">
+		          	<table class="emp-details-table">
+		          	<tr><td>Ambulance​:</td><td>basca</td></tr>
+		          	<tr><td>Police​:</td><td>nbvbn</td></tr>
+		          	<tr><td>Fire Brigade​:</td><td>bvcbvxbvc</td></tr>
+		          	<tr><td>Hospitals​:</td><td>nbvbn</td></tr>
+		          	<tr><td>Local Dialing Code:</td><td>nbvbn</td></tr>
+		          	</table>
+		          </div>
+		          </li>
+		          
+		          <li>
+		          <div class="feat_small_details">
+		          <h4>Incident Reporting:</h4>
+		          </div>
+		          <div class="view_more"><a href="#" data-transition="slidefade"><img src="images/load_posts_disabled.png" alt="" title="" /></a></div>
+		          <div class="emp-details" style="display:none;">
+		          	<table class="emp-details-table">
+		          	<tr><td>IT Security Related Incidents:</td><td>basca</td></tr>
+		          	<tr><td>Physical Security Related Incidents​:</td><td>nbvbn</td></tr>
+		          	<tr><td>People Related Incidents​:</td><td>bvcbvxbvc</td></tr>
 		          	</table>
 		          </div>
 		          </li>
