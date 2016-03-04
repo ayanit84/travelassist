@@ -1,6 +1,7 @@
 package com.infosys.hackathon.travelassist.controllers;
 
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,6 +20,8 @@ import com.infosys.hackathon.travelassist.utils.TravelCookieHelper;
 @Controller
 public class IndexController {
 
+	private static final String COUNTRIES_KEY = "countries";
+
 	private static final Logger LOGGER = Logger
 			.getLogger(IndexController.class);
 
@@ -28,13 +31,13 @@ public class IndexController {
 	private CountryServiceClient countryServiceClient;
 
 	@RequestMapping(value = "/", method = RequestMethod.GET)
-	public String index(ModelMap model) {
+	public String index(ModelMap model, HttpSession session) {
 		LOGGER.info("initializing the login screen");
 		CountryServiceResponse serviceResponse = new CountryServiceResponse();
 		try {
 			serviceResponse = countryServiceClient.getRequest(
 					COUNTRY_COUNTRIES_HANDLER, CountryServiceResponse.class);
-			model.addAttribute("countries", serviceResponse.getDetails());
+			session.setAttribute(COUNTRIES_KEY, serviceResponse.getDetails());
 			LOGGER.info("service called to fetch all countries, size: "
 					+ serviceResponse.getDetails().size());
 		} catch (TravelServiceException e) {

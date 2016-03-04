@@ -97,8 +97,6 @@ public class DirectoryServiceController {
 
 			model.addAttribute("states", states);
 			model.addAttribute("cities", cities);
-
-			model.addAttribute("states", serviceResponse.getDetails());
 		} catch (TravelServiceException e) {
 			serviceResponse.setResult(ResultCodes.Failure);
 		}
@@ -123,6 +121,7 @@ public class DirectoryServiceController {
 					+ " employees returned");
 
 			model.addAttribute(EMPLOYEES_KEY, searchResponse.getEmployees());
+			showMoreFilters(country, state, model);
 		} catch (TravelServiceException e) {
 			searchResponse.setResult(ResultCodes.Failure);
 		}
