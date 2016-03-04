@@ -23,19 +23,17 @@
     <div role="main" class="ui-content">
     
        <div class="pages_maincontent">
-       <form action="map" method="GET" name="employees" onsubmit="urlOmit();return false;">
-              <h2 class="page_title">Get Direction!</h2> 
+       <form:form action="map" method="POST" onsubmit="urlOmit();return false;" modelAttribute="googleMapBean">
+              <h2 class="page_title">Explore your preferred location!</h2> 
               <div class="page_content"> 
-               <select name="city" id="city">
-					<c:forEach var="city" items="${cities}">
-						<option value="${city.key}">${city.value}</option>
-					</c:forEach> 
-				</select> 
-				<input type="submit" value="Find" />
+               <form:select path="selectedCity" id="city">
+               		<form:options items="${cities}" itemValue="key" itemLabel="value"/>
+				</form:select>
+				<INPUT type="submit" value="Find"/>
                <div id="map"></div>
               
               </div>
-        </form>
+        </form:form>
        </div>
 
     </div><!-- /content -->
