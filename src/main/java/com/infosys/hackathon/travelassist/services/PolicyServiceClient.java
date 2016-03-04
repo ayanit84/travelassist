@@ -7,21 +7,17 @@ import org.springframework.web.client.RestClientException;
 import com.infosys.hackathon.services.ServiceRequest;
 import com.infosys.hackathon.services.ServiceResponse;
 import com.infosys.hackathon.services.client.AbstractServiceClient;
-import com.infosys.hackathon.services.directory.dto.SearchResponse;
 import com.infosys.hackathon.services.exceptions.TravelServiceException;
-import com.infosys.hackathon.services.policy.EligibilityInformation;
 import com.infosys.hackathon.services.policy.dto.PolicyDetailsResponse;
 import com.infosys.hackathon.travelassist.exceptions.ServiceEndPointNotFoundException;
 import com.infosys.hackathon.travelassist.utils.ServiceEndpoint;
 
 @Service
-public class PolicyServiceClient extends
-		AbstractServiceClient<ServiceRequest, ServiceResponse> {
+public class PolicyServiceClient extends AbstractServiceClient<ServiceRequest, PolicyDetailsResponse> {
 	private static final String POLICY_SERVICE_NAME = "policy";
-	private static final String POLICY_FETCH_HANDLER = "fetchPolicy";
 
 	@Autowired
-	private ServiceEndpoint endPoint;
+	private ServiceEndpoint serviceEndPoint;
 
 	@Override
 	public String getServiceName() {
@@ -29,40 +25,29 @@ public class PolicyServiceClient extends
 	}
 
 	@Override
-	public ServiceResponse getRequest(String handlerName,
-			Class<ServiceResponse> responseType, String... urlParams)
+	public PolicyDetailsResponse getRequest(String handlerName, Class<PolicyDetailsResponse> responseType, String... urlParams)
 			throws TravelServiceException {
-		// TODO Auto-generated method stub
-		return null;
+
+		StringBuilder serviceUrl;
+		try {
+			serviceUrl = new StringBuilder(serviceEndPoint.getEndPoint(POLICY_SERVICE_NAME, handlerName));
+
+			if (urlParams != null && urlParams.length > 0) {
+				for (int i = 0; i < urlParams.length; i++) {
+					serviceUrl.append("/" + urlParams[i]);
+				}
+			}
+
+			return getRestTemplate().getForObject(serviceUrl.toString(), responseType);
+		} catch (RestClientException | ServiceEndPointNotFoundException e) {
+			throw new RestClientException(e.getMessage());
+		}
 	}
 
 	@Override
-	public ServiceResponse postRequest(String handlerName,
-			ServiceRequest request, Class<ServiceResponse> responseType)
+	public PolicyDetailsResponse postRequest(String handlerName, ServiceRequest request, Class<PolicyDetailsResponse> responseType)
 			throws TravelServiceException {
-		// TODO Auto-generated method stub
-		return null;
+		throw new TravelServiceException("Post Request Not Allowed");
 	}
-
-//	@Override
-//	public ServiceResponse getRequest(Class<ServiceResponse> responseType)
-//			throws TravelServiceException {
-//		try {
-//			return getRestTemplate().getForObject(
-//					endPoint.getEndPoint(POLICY_SERVICE_NAME,
-//							POLICY_FETCH_HANDLER), responseType);
-//		} catch (RestClientException | ServiceEndPointNotFoundException e) {
-//			throw new RestClientException(e.getMessage());
-//		}
-//	}
-//
-//	@Override
-//	public ServiceResponse postRequest(ServiceRequest request,
-//			Class<ServiceResponse> responseType) throws TravelServiceException {
-//		// TODO Auto-generated method stub
-//		return null;
-//	}
-	
-	
 
 }

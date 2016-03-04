@@ -9,6 +9,6 @@ public class ApplicationConstants {
 	public static final String MAP_PAGE = "map";
 	public static final String CONTACT_PAGE = "contactUs";
 	public static final String EMERGENCY_CONTACT_PAGE = "emergency-contact";
-
+	public static final String POLICY_PAGE = "policy";
 	public static final String COUNTRY_COOKIE_NAME = "coun";
 }
