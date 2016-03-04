@@ -18,23 +18,32 @@ import com.infosys.hackathon.travelassist.utils.ApplicationConstants;
 
 @Controller
 public class PolicyServiceController {
-	private static final Logger LOGGER = Logger.getLogger(PolicyServiceController.class);
+	private static final Logger LOGGER = Logger
+		.getLogger(PolicyServiceController.class);
 
-	private static final String POLICY_FETCH_HANDLER = "fetch";
+	private static final String POLICY_FETCH_HANDLER = "details";
 
 	@Autowired
 	PolicyServiceClient policyServiceClient;
 
 	@RequestMapping(value = "/policy", method = RequestMethod.GET)
-	public String getPolicyData(@CookieValue("coun") String country, @RequestParam String jobLevel, ModelMap model) {
+	public String forwardToPolicy() {
+		return ApplicationConstants.POLICY_PAGE;
+
+	}
+
+	@RequestMapping(value = "/policy", method = RequestMethod.POST)
+	public String getPolicyData(@CookieValue("coun") String country,
+		@RequestParam String jobLevel, ModelMap model) {
 		LOGGER.info("fetching policy Data:" + country + " , " + jobLevel);
 		PolicyDetailsResponse response = new PolicyDetailsResponse();
 
 		try {
-			response = policyServiceClient.getRequest(POLICY_FETCH_HANDLER, PolicyDetailsResponse.class, country,
-					jobLevel);
+			response = policyServiceClient.getRequest(POLICY_FETCH_HANDLER,
+				PolicyDetailsResponse.class, country, jobLevel);
 
-			EligibilityInformation eligibilityInformation = response.getEligibilityDetails();
+			EligibilityInformation eligibilityInformation = response
+				.getEligibilityDetails();
 
 			model.addAttribute("eligibilityInfo", eligibilityInformation);
 		} catch (TravelServiceException e) {
