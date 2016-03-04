@@ -31,31 +31,35 @@
 		</div>
 		<!-- /header -->
 
-		<form action="list" method="POST" name="employees">
-			<span>State</span> 
-				<select name="state" id="state">
+			<div role="main" class="ui-content">
+				<div class="pages_maincontent">
+				<form action="list" method="POST" name="employees">
+				<div class="page_content">
+				<h2 class="strong-cls" style="text-align:center;">State</h2> 
+				<select name="state" id="state" onchange="countryChange()" >
 					<c:forEach var="state" items="${states}">
 						<option value="${state.key}">${state.value}</option>
 					</c:forEach>
 				</select>
-				<span>City</span> <select name="city" id="city">
+				<h2 class="strong-cls" style="text-align:center;">City</h2> 
+				<select name="city" id="city">
 					<c:forEach var="city" items="${cities}">
 						<option value="${city.key}">${city.value}</option>
 					</c:forEach>
 				</select> 
 				<input type="submit" value="Search" />
-			<div role="main" class="ui-content">
-				
-
-				<div class="pages_maincontent">
-					<h2 class="page_title">Infocions</h2>
+				</div>
+					<h2 class="page_title">Infoscions</h2>
 					<div class="page_content">
 						<ul class="features_list_detailed">
-							<li>
 								<c:forEach var="employee" items="${employees}">
+								<li>
+								<div class="feat_small_details">
+									<h4><span>${employee.firstName}</span><span>${employee.lastName}</span></h4>
+								</div>
 									<div class="view_more">
 										<a href="#" data-transition="slidefade"><img
-											src="images/load_posts_disabled.png" alt="" title="" /></a>
+											src="images/load_posts_disabled.png" alt="" title="" onclick="divToggle();"/></a>
 									</div>
 									<div class="emp-details" style="display: none;">
 										<span class="strong-cls">Contact Information:</span>
@@ -82,82 +86,15 @@
 											</tr>
 										</table>
 									</div>
+									</li>
 								</c:forEach>
-							</li>
-							<!-- <li>
-								<div class="feat_small_details">
-									<h4>Employee1</h4>
-								</div>
-								<div class="view_more">
-									<a href="#" data-transition="slidefade"><img
-										src="images/load_posts_disabled.png" alt="" title="" /></a>
-								</div>
-								<div class="emp-details" style="display: none;">
-									<span class="strong-cls">Contact Information:</span>
-									<table class="emp-details-table">
-										<tr>
-											<td>Conatct No.:</td>
-											<td>9435789088</td>
-										</tr>
-										<tr>
-											<td>Eamil Id:</td>
-											<td>saikamini.9@gmail.com</td>
-										</tr>
-									</table>
-									<br>
-									<span class="strong-cls">Office Information:</span>
-									<table class="emp-details-table">
-										<tr>
-											<td>Unit:</td>
-											<td>MFGADM</td>
-										</tr>
-										<tr>
-											<td>Designation:</td>
-											<td>Senior System Engineer</td>
-										</tr>
-									</table>
-								</div>
-							</li>
-							<li>
-								<div class="feat_small_details">
-									<h4>Employee2</h4>
-								</div>
-								<div class="view_more">
-									<a href="#" data-transition="slidefade"><img
-										src="images/load_posts_disabled.png" alt="" title="" /></a>
-								</div>
-								<div class="emp-details" style="display: none;">
-									<span class="strong-cls">Contact Information:</span>
-									<table class="emp-details-table">
-										<tr>
-											<td>Conatct No.:</td>
-											<td>9435789088</td>
-										</tr>
-										<tr>
-											<td>Eamil Id:</td>
-											<td>saikamini.9@gmail.com</td>
-										</tr>
-									</table>
-									<br>
-									<span class="strong-cls">Office Information:</span>
-									<table class="emp-details-table">
-										<tr>
-											<td>Unit:</td>
-											<td>MFGADM</td>
-										</tr>
-										<tr>
-											<td>Designation:</td>
-											<td>Senior System Engineer</td>
-										</tr>
-									</table>
-								</div>
-							</li> -->
 						</ul>
 					</div>
+							</form>
 				</div>
 
 			</div>
-		</form>
+
 		<!-- /content -->
 
 		<div data-role="panel" id="left-panel" data-display="reveal"
@@ -173,35 +110,6 @@
 	</div>
 	<jsp:include page="/WEB-INF/pages/js-include.jsp"></jsp:include>
 
-
-	<script>
-		$('.view_more').click(function() {
-			$(this).next('.emp-details').slideToggle("slow");
-		});
-	</script>
-	<c:url var="findCitiesUrl" value="http://localhost:8080/servicemanager/service/country/cities/"></c:url>
-	<script type="text/javascript">
-	$(document).ready(function() { 
-		console.log($.cookie("coun"));
-		$('#state').change(
-			function() {
-				$.getJSON('${findCitiesUrl}' + $.cookie("coun") + '/' + $(this).val(), function(data) 
-				{
-					// clear existing one.
-					$('#city').val('');
-					var html = '';
-					var details = data.details;
-					var len = details.length;
-					for ( var i = 0; i < len; i++) {
-						html += '<option value="' + details[i].key + '">'
-								+ details[i].value + '</option>';
-					}
-	 
-					$('#city').html(html);
-				});
-			});
-	});
-</script>
 </body>
 </html>
 

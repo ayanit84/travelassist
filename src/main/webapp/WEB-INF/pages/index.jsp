@@ -15,7 +15,7 @@
 
         <div class="logo_container">
             <div class="logo">
-            <img src="images/logo.png" alt="biotic" title="biotic" />
+            <img src="images/logo.png" alt="travelassist" title="travelassist" />
             <h2>Travel Assist</h2>
             <span>Self Help Portal</span>                        
             </div>                     
