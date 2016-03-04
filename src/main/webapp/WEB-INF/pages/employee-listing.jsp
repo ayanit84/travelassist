@@ -40,13 +40,13 @@
 					<c:forEach var="state" items="${states}">
 						<option value="${state.key}">${state.value}</option>
 					</c:forEach>
-				</select>
-				<h2 class="strong-cls" style="text-align:center;">City</h2> 
-				<select name="city" id="city">
+				</select> 
+				<!--  <select name="city" id="city">
 					<c:forEach var="city" items="${cities}">
 						<option value="${city.key}">${city.value}</option>
-					</c:forEach>
-				</select> 
+					</c:forEach>-->
+					<div id="city">
+					</div>
 				<input type="submit" value="Search" />
 				</div>
 					<h2 class="page_title">Infoscions</h2>
