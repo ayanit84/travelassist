@@ -23,7 +23,7 @@ function countryChange(){
 								+ details[i].value + '</option>';
 					}
 						html += '</select>';
-					$('#city').html(html);
+					$('#city').html(html); 
 				});
 	});
 }

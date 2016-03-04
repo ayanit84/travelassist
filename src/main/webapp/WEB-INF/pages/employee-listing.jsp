@@ -39,7 +39,7 @@
 				<select name="state" id="state" onchange="countryChange()" >
 					<c:forEach var="state" items="${states}">
 						<option value="${state.key}">${state.value}</option>
-					</c:forEach>
+					</c:forEach> 
 				</select> 
 				<!--  <select name="city" id="city">
 					<c:forEach var="city" items="${cities}">
