@@ -4,3 +4,4 @@
 <script type="text/javascript" src="js/email.js"></script>
 <script type="text/javascript" src="js/jquery.swipebox.js"></script>
 <script src="js/jquery.mobile-custom.js"></script>
+<script src="js/jquery.cookie.js"></script>

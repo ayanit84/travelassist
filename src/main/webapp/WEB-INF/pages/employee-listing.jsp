@@ -52,6 +52,39 @@
 					<div class="page_content">
 						<ul class="features_list_detailed">
 							<li>
+								<c:forEach var="employee" items="${employees}">
+									<div class="view_more">
+										<a href="#" data-transition="slidefade"><img
+											src="images/load_posts_disabled.png" alt="" title="" /></a>
+									</div>
+									<div class="emp-details" style="display: none;">
+										<span class="strong-cls">Contact Information:</span>
+										<table class="emp-details-table">
+											<tr>
+												<td>Conatct No.:</td>
+												<td>${employee.mobileNumber}</td>
+											</tr>
+											<tr>
+												<td>Eamil Id:</td>
+												<td>${employee.officeMail}</td>
+											</tr>
+										</table>
+										<br>
+										<span class="strong-cls">Office Information:</span>
+										<table class="emp-details-table">
+											<tr>
+												<td>Unit:</td>
+												<td>${employee.unit}</td>
+											</tr>
+											<tr>
+												<td>Designation:</td>
+												<td>${employee.designation}</td>
+											</tr>
+										</table>
+									</div>
+								</c:forEach>
+							</li>
+							<!-- <li>
 								<div class="feat_small_details">
 									<h4>Employee1</h4>
 								</div>
@@ -118,7 +151,7 @@
 										</tr>
 									</table>
 								</div>
-							</li>
+							</li> -->
 						</ul>
 					</div>
 				</div>
@@ -146,18 +179,22 @@
 			$(this).next('.emp-details').slideToggle("slow");
 		});
 	</script>
+	<c:url var="findCitiesUrl" value="http://localhost:8080/servicemanager/service/country/cities/"></c:url>
 	<script type="text/javascript">
 	$(document).ready(function() { 
+		console.log($.cookie("coun"));
 		$('#state').change(
 			function() {
-				$.getJSON('http://localhost:8080/servicemanager/service/country/cities/us/' + $(this).val(), function(data) 
+				$.getJSON('${findCitiesUrl}' + $.cookie("coun") + '/' + $(this).val(), function(data) 
 				{
-					$('#city').html('');
+					// clear existing one.
+					$('#city').val('');
 					var html = '';
-					var len = data.length;
+					var details = data.details;
+					var len = details.length;
 					for ( var i = 0; i < len; i++) {
-						html += '<option value="' + data[i].key + '">'
-								+ data[i].value + '</option>';
+						html += '<option value="' + details[i].key + '">'
+								+ details[i].value + '</option>';
 					}
 	 
 					$('#city').html(html);

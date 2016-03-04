@@ -31,7 +31,7 @@ public class DirectoryServiceController {
 	private static final String COUNTRY_CITIES_HANDLER = "cities";
 
 	private static final Logger LOGGER = Logger
-		.getLogger(DirectoryServiceController.class);
+			.getLogger(DirectoryServiceController.class);
 
 	@Autowired
 	private DirectoryServiceClient directoryServiceClient;
@@ -40,31 +40,31 @@ public class DirectoryServiceController {
 	private CountryServiceClient countryServiceClient;
 
 	@RequestMapping(value = "/showFilter", method = RequestMethod.GET)
-	public String showFilters(@CookieValue("coun") String country,
-		Model model) {
+	public String showFilters(@CookieValue("coun") String country, Model model) {
 		LOGGER.info("fetching states of specific country");
 		CountryServiceResponse serviceResponse = new CountryServiceResponse();
 		List<KeyValuePair> states = null;
 		List<KeyValuePair> cities = null;
 		try {
 			serviceResponse = countryServiceClient.getRequest(
-				COUNTRY_STATES_HANDLER, CountryServiceResponse.class, country);
+					COUNTRY_STATES_HANDLER, CountryServiceResponse.class,
+					country);
 			states = serviceResponse.getDetails();
 			LOGGER.info("successfully processed, " + states.size()
-				+ " states returned");
+					+ " states returned");
 
-			// if (states.size() > 0) {
-			// String firstState = states.get(0).getKey();
-			// serviceResponse = countryServiceClient.getRequest(
-			// COUNTRY_CITIES_HANDLER, CountryServiceResponse.class,
-			// country, firstState);
-			// cities = serviceResponse.getDetails();
-			// LOGGER.info("successfully processed, " + cities.size()
-			// + " cities returned");
-			// }
+			if (states.size() > 0) {
+				String firstState = states.get(0).getKey();
+				serviceResponse = countryServiceClient.getRequest(
+						COUNTRY_CITIES_HANDLER, CountryServiceResponse.class,
+						country, firstState);
+				cities = serviceResponse.getDetails();
+				LOGGER.info("successfully processed, " + cities.size()
+						+ " cities returned");
+			}
 
 			model.addAttribute("states", states);
-			// model.addAttribute("cities", cities);
+			model.addAttribute("cities", cities);
 		} catch (TravelServiceException e) {
 			serviceResponse.setResult(ResultCodes.Failure);
 		}
@@ -74,23 +74,24 @@ public class DirectoryServiceController {
 
 	@RequestMapping(value = "/showMoreFilters", method = RequestMethod.GET)
 	public String showMoreFilters(@CookieValue("coun") String country,
-		@RequestParam String state, ModelMap model) {
+			@RequestParam String state, ModelMap model) {
 		LOGGER.info("fetching states of specific country");
 		CountryServiceResponse serviceResponse = new CountryServiceResponse();
 		List<KeyValuePair> states = null;
 		List<KeyValuePair> cities = null;
 		try {
 			serviceResponse = countryServiceClient.getRequest(
-				COUNTRY_STATES_HANDLER, CountryServiceResponse.class, country);
+					COUNTRY_STATES_HANDLER, CountryServiceResponse.class,
+					country);
 			states = serviceResponse.getDetails();
 			LOGGER.info("successfully processed, " + states.size()
-				+ " states returned");
+					+ " states returned");
 
 			if (states.size() > 0) {
 				String firstState = states.get(0).getKey();
 				serviceResponse = countryServiceClient.getRequest(
-					COUNTRY_CITIES_HANDLER, CountryServiceResponse.class,
-					country, firstState);
+						COUNTRY_CITIES_HANDLER, CountryServiceResponse.class,
+						country, firstState);
 				cities = serviceResponse.getDetails();
 			}
 
@@ -107,17 +108,19 @@ public class DirectoryServiceController {
 
 	@RequestMapping(value = "/list", method = RequestMethod.POST)
 	public String listEmployeeResult(@CookieValue("coun") String country,
-		@RequestParam String state, @RequestParam String city, ModelMap model) {
+			@RequestParam String state, @RequestParam String city,
+			ModelMap model) {
 		LOGGER.info("search for employees, country:" + country + " ,state:"
-			+ state + ", city=" + city);
+				+ state + ", city=" + city);
 		SearchResponse searchResponse = new SearchResponse();
 		try {
 			searchResponse = directoryServiceClient.postRequest(
-				DIRECTORY_SEARCH_HANDLER,
-				new SearchRequest(country, state, city), SearchResponse.class);
+					DIRECTORY_SEARCH_HANDLER, new SearchRequest(country, state,
+							city), SearchResponse.class);
 			LOGGER.info("successfully processed, result = "
-				+ searchResponse.getResult() + ", "
-				+ searchResponse.getEmployees().size() + " employees returned");
+					+ searchResponse.getResult() + ", "
+					+ searchResponse.getEmployees().size()
+					+ " employees returned");
 
 			model.addAttribute(EMPLOYEES_KEY, searchResponse.getEmployees());
 		} catch (TravelServiceException e) {
