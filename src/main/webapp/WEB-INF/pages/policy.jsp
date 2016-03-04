@@ -27,11 +27,16 @@
 		<!-- /header -->
 
 		<div class="page_content">
+			<form action="policy" method="post">
+				<input type="text" name="jobLevel"></input> <input type="submit"
+					value="Get Details"></input>
+			</form>
+
 			<ul class="features_list_detailed">
 				<li>
 					<div class="feat_small_details">
 						<h4>
-							<span>Leave Details</span>
+							<span>Compensation</span>
 						</h4>
 					</div>
 					<div class="view_more">
@@ -40,7 +45,26 @@
 							onclick="divToggle();" /></a>
 					</div>
 					<div class="emp-details" style="display: none;">
-						<span>You are entitled for ${eligibility.leave} leaves</span>
+						<span>Your Onsite Salary will be
+							${eligibilityInfo.compensation} </span>
+					</div>
+				</li>
+				<li>
+					<div class="feat_small_details">
+						<h4>
+							<span>Benefits</span>
+						</h4>
+					</div>
+					<div class="view_more">
+						<a href="#" data-transition="slidefade"><img
+							src="images/load_posts_disabled.png" alt="" title=""
+							onclick="divToggle();" /></a>
+					</div>
+					<div class="emp-details" style="display: none;">
+						<span>Child Education reimbursement max limit:
+							${eligibilityInfo.childEducationReimburse} </span> </br>
+						</br> <span>medical Expense reimbursement max limit:
+							${eligibilityInfo.medicalExpenseReimburse} </span>
 					</div>
 				</li>
 			</ul>
