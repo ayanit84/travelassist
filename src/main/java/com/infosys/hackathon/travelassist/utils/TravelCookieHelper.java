@@ -1,6 +1,9 @@
 package com.infosys.hackathon.travelassist.utils;
 
 import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+
+import com.infosys.hackathon.travelassist.exceptions.TravelAssistCookieNotFoundException;
 
 public class TravelCookieHelper {
 
@@ -10,7 +13,17 @@ public class TravelCookieHelper {
 		return cookie;
 	}
 
-	public static Cookie get(String name) {
-		return null;
+	public static Cookie get(String name, HttpServletRequest requestObj)
+		throws TravelAssistCookieNotFoundException {
+		Cookie[] allCookies = requestObj.getCookies();
+		if (allCookies != null) {
+			for (Cookie cookie : allCookies) {
+				if (cookie.getName().equals(name)) {
+					return cookie;
+				}
+			}
+		}
+		throw new TravelAssistCookieNotFoundException(
+			name + " cookie not found");
 	}
 }

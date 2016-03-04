@@ -38,4 +38,9 @@ public class ApplicationConfiguration extends WebMvcConfigurerAdapter {
 	public ServiceEndpoint serviceEndpoint() {
 		return new ServiceEndpoint();
 	}
+
+	// @Override
+	// public void addInterceptors(InterceptorRegistry registry) {
+	// registry.addInterceptor(new CountryInterceptor());
+	// }
 }
