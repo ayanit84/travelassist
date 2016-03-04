@@ -42,7 +42,7 @@
                   </li>
                   <li>
                   <a href="emergency-contact"><img src="images/icons/black/helpdesk.png" alt="" title="" />
-                  <span><strong>Emergency Contacts</strong></span>
+                  <span><strong>Help Desk</strong></span>
                   </a>
                   </li>
                   <li>
@@ -51,7 +51,7 @@
                   </a>
                   </li>
                   <li>
-                  <a href="#"><img src="images/icons/black/map.png" alt="" title="" />
+                  <a href="map"><img src="images/icons/black/map.png" alt="" title="" />
                   <span><strong>Map</strong></span>
                   </a>
                   </li>
