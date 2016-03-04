@@ -56,7 +56,7 @@
                   </a>
                   </li>
                   <li>
-                  <a href="#"><img src="images/icons/black/policy.png" alt="" title="" />
+                  <a href="policy"><img src="images/icons/black/policy.png" alt="" title="" />
                   <span><strong>Policy</strong></span>
                   </a>
                   </li>
