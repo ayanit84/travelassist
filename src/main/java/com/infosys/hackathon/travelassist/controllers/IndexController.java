@@ -23,7 +23,7 @@ public class IndexController {
 	private static final String COUNTRIES_KEY = "countries";
 
 	private static final Logger LOGGER = Logger
-			.getLogger(IndexController.class);
+		.getLogger(IndexController.class);
 
 	private static final String COUNTRY_COUNTRIES_HANDLER = "countries";
 
@@ -36,10 +36,10 @@ public class IndexController {
 		CountryServiceResponse serviceResponse = new CountryServiceResponse();
 		try {
 			serviceResponse = countryServiceClient.getRequest(
-					COUNTRY_COUNTRIES_HANDLER, CountryServiceResponse.class);
+				COUNTRY_COUNTRIES_HANDLER, CountryServiceResponse.class);
 			session.setAttribute(COUNTRIES_KEY, serviceResponse.getDetails());
 			LOGGER.info("service called to fetch all countries, size: "
-					+ serviceResponse.getDetails().size());
+				+ serviceResponse.getDetails().size());
 		} catch (TravelServiceException e) {
 			LOGGER.error(e.getMessage());
 		}
@@ -53,15 +53,20 @@ public class IndexController {
 
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
 	public String home(@RequestParam String country,
-			HttpServletResponse response) {
+		HttpServletResponse response) {
 		LOGGER.info("selected country " + country);
-		response.addCookie(TravelCookieHelper.create(
-				ApplicationConstants.COUNTRY_COOKIE_NAME, country));
+		response.addCookie(TravelCookieHelper
+			.create(ApplicationConstants.COUNTRY_COOKIE_NAME, country));
 		return ApplicationConstants.HOME_PAGE;
 	}
 
 	@RequestMapping(value = "/contactus", method = RequestMethod.GET)
 	public String contactUs() {
 		return ApplicationConstants.CONTACT_PAGE;
+	}
+
+	@RequestMapping(value = "/map", method = RequestMethod.GET)
+	public String map() {
+		return "map";
 	}
 }
