@@ -15,11 +15,11 @@ import com.infosys.hackathon.travelassist.services.CountryServiceClient;
 import com.infosys.hackathon.travelassist.utils.ApplicationConstants;
 
 @Controller
-public class MapController {
+public class GoogleMapController {
 
 	private static final String COUNTRY_ALLCITIES_HANDLER = "allcities";
 
-	private static final Logger LOGGER = Logger.getLogger(MapController.class);
+	private static final Logger LOGGER = Logger.getLogger(GoogleMapController.class);
 
 	@Autowired
 	private CountryServiceClient countryServiceClient;

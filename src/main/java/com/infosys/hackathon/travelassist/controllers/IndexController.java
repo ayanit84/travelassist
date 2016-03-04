@@ -65,8 +65,4 @@ public class IndexController {
 		return ApplicationConstants.CONTACT_PAGE;
 	}
 
-	@RequestMapping(value = "/map", method = RequestMethod.GET)
-	public String map() {
-		return "map";
-	}
 }
