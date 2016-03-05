@@ -81,4 +81,9 @@ public class IndexController {
 		return ApplicationConstants.CURRENCY_PAGE;
 	}
 
+	@RequestMapping(value = "/weather", method = RequestMethod.GET)
+	public String weather() {
+		return ApplicationConstants.WEATHER_PAGE;
+	}
+
 }

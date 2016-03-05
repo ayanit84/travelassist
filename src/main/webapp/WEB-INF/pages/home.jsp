@@ -66,7 +66,7 @@
                   </a>
                   </li>
                   <li>
-                  <a href="#"><img src="images/icons/black/weather.png" alt="" title="" />
+                  <a href="weather"><img src="images/icons/black/weather.png" alt="" title="" />
                   <span><strong>Weather</strong></span>
                   </a>
                   </li>
