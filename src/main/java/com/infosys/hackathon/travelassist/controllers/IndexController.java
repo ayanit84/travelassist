@@ -64,5 +64,10 @@ public class IndexController {
 	public String contactUs() {
 		return ApplicationConstants.CONTACT_PAGE;
 	}
+	
+	@RequestMapping(value = "/world-clock", method = RequestMethod.GET)
+	public String worldClock() {
+		return ApplicationConstants.WORLD_CLOCK_PAGE;
+	}
 
 }

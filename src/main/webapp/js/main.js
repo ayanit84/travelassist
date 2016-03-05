@@ -56,7 +56,7 @@ function initMap() {
 	   });
 }
 function urlOmit(){
-	window.location.href = window.location.href.split('?')[0];
+	//window.location.href = window.location.href.split('?')[0];
 	initMap();
 }
 
