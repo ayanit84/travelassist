@@ -33,22 +33,7 @@
 			</form>
 
 			<ul class="features_list_detailed">
-				<li>
-					<div class="feat_small_details">
-						<h4>
-							<span>Compensation</span>
-						</h4>
-					</div>
-					<div class="view_more">
-						<a href="#" data-transition="slidefade"><img
-							src="images/load_posts_disabled.png" alt="" title=""
-							onclick="divToggle();" /></a>
-					</div>
-					<div class="emp-details" style="display: none;">
-						<span>Your Onsite Salary will be
-							${eligibilityInfo.compensation} </span>
-					</div>
-				</li>
+
 				<li>
 					<div class="feat_small_details">
 						<h4>

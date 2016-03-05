@@ -34,7 +34,7 @@
 				<li>
 					<div class="feat_small_details">
 						<h4>
-							<span>Leave Details</span>
+							<span>Earned Leave Details</span>
 						</h4>
 					</div>
 					<div class="view_more">
@@ -46,6 +46,53 @@
 						<span>You are entitled for ${eligibilityInfo.leave} leaves</span>
 					</div>
 				</li>
+				<li>
+					<div class="feat_small_details">
+						<h4>
+							<span>Maternity/Paternity Leave Details</span>
+						</h4>
+					</div>
+					<div class="view_more">
+						<a href="#" data-transition="slidefade"><img
+							src="images/load_posts_disabled.png" alt="" title=""
+							onclick="divToggle();" /></a>
+					</div>
+					<div class="emp-details" style="display: none;">
+						<span>Maternity Leave Limit : 4 months</span>
+						<span>Paternity Leave Limit : 5 Days</span>
+					</div>
+				</li>
+								<li>
+					<div class="feat_small_details">
+						<h4>
+							<span>Adoption Leave Details</span>
+						</h4>
+					</div>
+					<div class="view_more">
+						<a href="#" data-transition="slidefade"><img
+							src="images/load_posts_disabled.png" alt="" title=""
+							onclick="divToggle();" /></a>
+					</div>
+					<div class="emp-details" style="display: none;">
+						<span>Adoption Leave Limit : 5 Days</span>
+					</div>
+				</li>
+				<li>
+					<div class="feat_small_details">
+						<h4>
+							<span>Sabbatical Leave Details</span>
+						</h4>
+					</div>
+					<div class="view_more">
+						<a href="#" data-transition="slidefade"><img
+							src="images/load_posts_disabled.png" alt="" title=""
+							onclick="divToggle();" /></a>
+					</div>
+					<div class="emp-details" style="display: none;">
+						<span>Depending on Case to case basis , Sabbatical Leave details may vary</span>
+					</div>
+				</li>
+				
 			</ul>
 		</div>
 
