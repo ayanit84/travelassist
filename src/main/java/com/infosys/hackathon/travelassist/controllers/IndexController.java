@@ -1,11 +1,13 @@
 package com.infosys.hackathon.travelassist.controllers;
 
+import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -52,11 +54,15 @@ public class IndexController {
 	}
 
 	@RequestMapping(value = "/home", method = RequestMethod.GET)
-	public String home(@RequestParam String country,
-		HttpServletResponse response) {
+	public String home(@RequestParam String country, HttpServletRequest request,
+		HttpServletResponse response, Model model, HttpSession session) {
 		LOGGER.info("selected country " + country);
 		response.addCookie(TravelCookieHelper
 			.create(ApplicationConstants.COUNTRY_COOKIE_NAME, country));
+
+		session.setAttribute("homeUrl", "home?country=" + country);
+		session.setAttribute("country", country);
+
 		return ApplicationConstants.HOME_PAGE;
 	}
 
@@ -64,12 +70,12 @@ public class IndexController {
 	public String contactUs() {
 		return ApplicationConstants.CONTACT_PAGE;
 	}
-	
+
 	@RequestMapping(value = "/world-clock", method = RequestMethod.GET)
 	public String worldClock() {
 		return ApplicationConstants.WORLD_CLOCK_PAGE;
 	}
-	
+
 	@RequestMapping(value = "/currency", method = RequestMethod.GET)
 	public String currency() {
 		return ApplicationConstants.CURRENCY_PAGE;

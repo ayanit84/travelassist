@@ -2,7 +2,7 @@
 
               <nav class="main-nav">
                 <ul>
-                  <li><a href="#right-panel" data-transition="slidefade"><img src="images/icons/white/home.png" alt="" title="" /><span>Home</span></a></li>
+                  <li><a href="${homeUrl}" data-transition="slidefade"><img src="images/icons/white/home.png" alt="" title="" /><span>Home</span></a></li>
                   <li><a href="#right-panel"><img src="images/icons/white/user.png" alt="" title="" /><span>Settings</span></a></li>
                   <li><a href="world-clock"><img src="images/icons/white/briefcase.png" alt="" title="" /><span>World Clock</span></a></li>
                   <li><a href="weather"><img src="images/icons/white/team.png" alt="" title="" /><span>Weather</span></a></li>

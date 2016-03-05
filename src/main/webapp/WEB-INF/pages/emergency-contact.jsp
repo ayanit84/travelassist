@@ -33,7 +33,7 @@
 					<ul class="features_list_detailed">
 						<li>
 							<div class="feat_small_details">
-								<h4>BP HR</h4>
+								<h4>GEO HR</h4>
 							</div>
 							<div class="view_more">
 								<a href="#" data-transition="slidefade"><img
