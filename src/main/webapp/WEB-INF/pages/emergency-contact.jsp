@@ -49,11 +49,11 @@
 									</tr>
 									<tr>
 										<td>Conatct No.:</td>
-										<td>${bphr.mobileNumber}</td>
+										<td><a href="tel:${bphr.mobileNumber}">${bphr.mobileNumber}</a></td>
 									</tr>
 									<tr>
 										<td>Eamil Id:</td>
-										<td>${bphr.officeMail}</td>
+										<td><a href="mailto:${bphr.officeMail}">${bphr.officeMail}</a></td>
 									</tr>
 								</table>
 								<br>
@@ -84,11 +84,11 @@
 									</tr>
 									<tr>
 										<td>Conatct No.:</td>
-										<td>${countryHead.mobileNumber}</td>
+										<td><a href="tel:${countryHead.mobileNumber}">${countryHead.mobileNumber}</a></td>
 									</tr>
 									<tr>
 										<td>Eamil Id:</td>
-										<td>${countryHead.officeMail}</td>
+										<td><a href="mailto:${countryHead.officeMail}">${countryHead.officeMail}</a></td>
 									</tr>
 								</table>
 								<br>

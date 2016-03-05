@@ -65,12 +65,12 @@
 										<span class="strong-cls">Contact Information:</span>
 										<table class="emp-details-table">
 											<tr>
-												<td>Conatct No.:</td>
-												<td>${employee.mobileNumber}</td>
+												<td>Contact No.:</td>
+												<td><a href="tel:${employee.mobileNumber}">${employee.mobileNumber}</a></td>
 											</tr>
 											<tr>
 												<td>Eamil Id:</td>
-												<td>${employee.officeMail}</td>
+												<td><a href="mailto:${employee.officeMail}">${employee.officeMail}</a></td>
 											</tr>
 										</table>
 										<br>
