@@ -36,7 +36,7 @@
                   </a>
                   </li>
                   <li>
-                  <a href="#"><img src="images/icons/black/dos.png" alt="" title="" />
+                  <a href="dos"><img src="images/icons/black/dos.png" alt="" title="" />
                   <span><strong>Dos</strong></span>
                   </a>
                   </li>

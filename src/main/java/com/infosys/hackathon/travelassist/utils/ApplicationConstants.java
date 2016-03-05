@@ -15,4 +15,5 @@ public class ApplicationConstants {
 	public static final String COUNTRY_COOKIE_NAME = "coun";
 	public static final String WORLD_CLOCK_PAGE = "world-clock";
 	public static final String CURRENCY_PAGE = "currency";
+	public static final String ACTIVITIES_PAGE = "activities";
 }
