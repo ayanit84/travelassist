@@ -32,14 +32,14 @@
               
               <h3>Top features</h3>   
               <ul class="features_list">
-                  <li><a href="directory.html" data-transition="slidefade"><img src="images/icons/black/photos.png" alt="" title="" /><span>Directory Service</span></a></li>
-                  <li><a href="policy.html" data-transition="slidefade"><img src="images/icons/black/toggle.png" alt="" title="" /><span>Policy Service</span></a></li>
-                  <li><a href="leave.html" data-transition="slidedown"><img src="images/icons/black/lock.png" alt="" title="" /><span>Leave System Service</span></a></li>
-                  <li><a href="contact.html" data-transition="slidefade"><img src="images/icons/black/contact.png" alt="" title="" /><span>Help Desk Service</span></a></li>
-                  <li><a href="domestic.html" data-transition="slidedown"><img src="images/icons/black/heart.png" alt="" title="" /><span>Domestic Service</span></a></li>
+                  <li><a href="#" data-transition="slidefade"><img src="images/icons/black/photos.png" alt="" title="" /><span>Directory Service</span></a></li>
+                  <li><a href="#" data-transition="slidefade"><img src="images/icons/black/toggle.png" alt="" title="" /><span>Policy Service</span></a></li>
+                  <li><a href="#" data-transition="slidedown"><img src="images/icons/black/lock.png" alt="" title="" /><span>Leave System Service</span></a></li>
+                  <li><a href="#" data-transition="slidefade"><img src="images/icons/black/contact.png" alt="" title="" /><span>Help Desk Service</span></a></li>
+                  <li><a href="#" data-transition="slidedown"><img src="images/icons/black/heart.png" alt="" title="" /><span>Domestic Service</span></a></li>
               </ul>
               
-              <a href="home.html" data-transition="slidefade" class="button_full">View all service</a>
+              <a href="#" data-transition="slidefade" class="button_full">View all service</a>
               </div>
        </div>
 
