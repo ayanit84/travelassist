@@ -19,7 +19,7 @@ public class ActivityServiceController {
 	private static final Logger LOGGER = Logger
 		.getLogger(ActivityServiceController.class);
 
-	private static final String ACTIVITY_HANDLER = "activity";
+	private static final String FETCH_HANDLER = "fetch";
 
 	@Autowired
 	private ActivitiesServiceClient activitiesServiceClient;
@@ -29,7 +29,7 @@ public class ActivityServiceController {
 
 		OnsiteActivityResponse response = null;
 		try {
-			response = activitiesServiceClient.getRequest(ACTIVITY_HANDLER,
+			response = activitiesServiceClient.getRequest(FETCH_HANDLER,
 				OnsiteActivityResponse.class, country);
 			model.addAttribute("activities", response.getOnsiteActivity());
 		} catch (TravelServiceException e) {
