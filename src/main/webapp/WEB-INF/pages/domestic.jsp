@@ -24,7 +24,7 @@
     
        <div class="pages_maincontent">
       
-              <h2 class="page_title">Serach your essentials...!</h2> 
+              <h2 class="page_title">Serach your domestic essentials!</h2> 
               <div class="page_content"> 
                <input id="pac-input" class="controls" type="text" placeholder="Search Box">
     <div id="map"></div>
