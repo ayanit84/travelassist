@@ -26,7 +26,7 @@
 
 		<div class="page_content">
 			<form action="leaves" method="post">
-				<input type="text" name="jobLevel"></input> 
+				<input type="text" name="jobLevel" placeholder="Enter your job level."></input> 
 				<input type="submit" value="Get Details"></input>
 			</form>
 
