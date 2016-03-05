@@ -69,5 +69,10 @@ public class IndexController {
 	public String worldClock() {
 		return ApplicationConstants.WORLD_CLOCK_PAGE;
 	}
+	
+	@RequestMapping(value = "/currency", method = RequestMethod.GET)
+	public String currency() {
+		return ApplicationConstants.CURRENCY_PAGE;
+	}
 
 }
