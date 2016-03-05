@@ -39,19 +39,13 @@
                   <li><a href="#" data-transition="slidedown"><img src="images/icons/black/heart.png" alt="" title="" /><span>Domestic Service</span></a></li>
               </ul>
               
-              <a href="#" data-transition="slidefade" class="button_full">View all service</a>
+              
               </div>
        </div>
 
     </div><!-- /content -->
 
-  <div data-role="panel" id="left-panel" data-display="reveal" data-position="left">
-<jsp:include page="/WEB-INF/pages/menu-nav.jsp"></jsp:include>
-</div>
    <!-- /panel -->
-	 <div data-role="panel" id="right-panel" data-display="reveal" data-position="right">
-<jsp:include page="/WEB-INF/pages/right-panel.jsp"></jsp:include>
-</div>
     <!-- /page -->
     </div>
 	<jsp:include page="/WEB-INF/pages/js-include.jsp"></jsp:include>
