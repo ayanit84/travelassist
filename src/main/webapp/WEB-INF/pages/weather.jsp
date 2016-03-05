@@ -28,7 +28,7 @@
 
 		<div role="main" class="ui-content">
 			<div class="pages_maincontent">
-				<h2 class="page_title">World Clock</h2>
+				<h2 class="page_title">Weather & Temperature</h2>
 				<div class="page_content">
 				
 	<div style="width: 210px;"><iframe style="display: block;" src="http://cdnres.willyweather.com/widget/loadView.html?id=42683" width="210" height="228" frameborder="0" scrolling="no"></iframe><a style="display: block;position: relative;text-indent: -9999em;margin: -20px 0 0 0;height: 20px;z-index: 1" href="http://www.willyweather.com/ca/santa-clara-county/cupertino.html">Cupertino CA forecast</a></div>

@@ -61,8 +61,8 @@
                   </a>
                   </li>
                   <li>
-                  <a href="#"><img src="images/icons/black/travel.png" alt="" title="" />
-                  <span><strong>Travel</strong></span>
+                  <a href="#"><img src="images/icons/black/clock.png" alt="" title="" />
+                  <span><strong>World Clock</strong></span>
                   </a>
                   </li>
                   <li>
