@@ -6,6 +6,11 @@
 <html>
 <head>
 	<jsp:include page="/WEB-INF/pages/header.jsp"></jsp:include>
+	<script type="text/javascript" src="js/modernizr.custom.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+	<link rel="stylesheet" type="text/css" href="css/demo.css" />
+	<link rel="stylesheet" type="text/css" href="css/ns-default.css" />
+	<link rel="stylesheet" type="text/css" href="css/ns-style-growl.css" />
 </head>
 <body>
 
@@ -87,6 +92,12 @@
     <!-- /page -->
     </div>
 	<jsp:include page="/WEB-INF/pages/js-include.jsp"></jsp:include>
+	
+	
+	<script type="text/javascript" src="js/classie.js"></script>
+	<script type="text/javascript" src="js/notification.js"></script>
+	<script type="text/javascript" src="js/notificationFx.js"></script>
+	
 </body>
 </html>
 	
