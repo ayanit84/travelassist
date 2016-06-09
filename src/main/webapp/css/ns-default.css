@@ -2,12 +2,12 @@
 
 .ns-box {
 	position: absolute;
-	padding: 12px;
+	padding: 10px;
 	line-height: 1.4;
 	z-index: 1000;
 	pointer-events: none;
 	color: #000;
-	font-size: 80%;
+	font-size: 77%;
 	font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
 }
 
