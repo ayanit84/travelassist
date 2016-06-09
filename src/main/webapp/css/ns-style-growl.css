@@ -1,7 +1,7 @@
 /* Growl-style notifications */
 .ns-growl {
-	top: 30px;
-	left: 30px;
+	top: 52px;
+	right: 5px;
 	max-width: 300px;
 	border-radius: 5px;
 }
@@ -21,12 +21,12 @@
 
 /* Scale */
 .ns-effect-scale {
-	background: #67c58f;
+	background: rgba(143, 214, 216, 0.47);
 	box-shadow: 0 25px 10px -15px rgba(0,0,0,0.05);
 }
 
 .ns-effect-scale a {
-	color: #1f8a4c;
+	color: blue;
 }
 
 .ns-effect-scale a:hover,

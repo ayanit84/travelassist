@@ -6,7 +6,7 @@
 		
 		// create the notification
 		var notification = new NotificationFx({
-			message : '<p>This is just a simple notice. Everything is in order and this is a <a href="#">simple link</a>.</p>',
+			message : '<p>Your cab has been booked.<a href="#">view more</a>.</p>',
 			layout : 'growl',
 			effect : 'scale',
 			type : 'notice', // notice, warning, error or success

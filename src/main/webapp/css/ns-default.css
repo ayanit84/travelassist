@@ -2,13 +2,12 @@
 
 .ns-box {
 	position: absolute;
-	background: rgba(42,45,50,0.85);
-	padding: 22px;
+	padding: 12px;
 	line-height: 1.4;
 	z-index: 1000;
 	pointer-events: none;
-	color: rgba(250,251,255,0.95);
-	font-size: 90%;
+	color: #000;
+	font-size: 80%;
 	font-family: 'Helvetica Neue', 'Segoe UI', Helvetica, Arial, sans-serif;
 }
 
@@ -19,7 +18,7 @@
 .ns-box a {
 	color: inherit;
 	opacity: 0.7;
-	font-weight: 700;
+	font-weight: 500;
 }
 
 .ns-box a:hover,
